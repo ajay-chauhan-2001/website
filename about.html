@@ -8,239 +8,94 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <style>
-   .ft{
-        color: #f1e4e4;
-        padding: 10px;
-        text-align: center;
-        padding-bottom: 10px;
-    }
-    .footer{
-        padding: 10px 0 10px;
-    }
-</style>
-
-<style>
-  /*===== GOOGLE FONTS =====*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
-/*===== VARIABLES CSS =====*/
-:root{
-  --header-height: 3rem;
-
-  /*===== Colors =====*/
-  --first-color: #3E0E12;
-  --first-color-dark: #2F0A0D;
-  --text-color: #524748;
-  --first-color-light: #7B6F71;
-  --first-color-lighten: #FBF9F9;
-
-  /*===== Font and typography =====*/
-  --body-font: 'Poppins', sans-serif;
-  --biggest-font-size: 2.5rem;
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.25rem;
-  --h3-font-size: 1.125rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
-
-  /*===== Font weight =====*/
-  --font-medium: 500;
-  --font-semi-bold: 600;
-  --font-bold: 700;
-
-  /*===== Margins =====*/
-  --mb-1: .5rem;
-  --mb-2: 1rem;
-  --mb-3: 1.5rem;
-  --mb-4: 2rem;
-  --mb-5: 2.5rem;
-  --mb-6: 3rem;
-
-  /*===== z index =====*/
-  --z-normal: 1;
-  --z-tooltip: 10;
-  --z-fixed: 100;
-}
+    /*===== CUSTOM STYLES =====*/
+  /* Toggle menu */
+  .navbar-toggler {
+      border: none;
+      outline: none;
+  }
   
-@media screen and (min-width: 768px){
-  :root{
-    --biggest-font-size: 4.5rem;
-    --h1-font-size: 2.25rem;
-    --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+  .navbar-toggler-icon {
+      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
   }
-}
-
-/*===== BASE =====*/
-*,::before,::after{
-  box-sizing: border-box;
-}
-
-html{
-  scroll-behavior: smooth;
-}
-
-body{
-  margin: var(--header-height) 0 0 0;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-medium);
-  background-color: var(--first-color-lighten);
-  color: var(--text-color);
-  line-height: 1.6;
-}
-
-h1,h2,h3,ul,p{
-  margin: 0;
-}
-
-h2,h3{
-  font-weight: var(--font-semi-bold);
-}
-
-ul{
-  padding: 0;
-  list-style: none;
-}
-
-a{
-  text-decoration: none;
-}
-
-img{
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/*===== CLASS CSS =====*/
-.section {
-  padding: 4rem 0 2rem;
-}
-
-.section-title, .section-subtitle {
-  text-align: center;
-}
-
-.section-title {
-  font-size: var(--h1-font-size);
-  color: var(--first-color);
-  margin-bottom: var(--mb-3);
-}
-
-.section-subtitle {
-  display: block;
-  font-size: var(--smaller-font-size);
-  font-weight: var(--font-semi-bold);
-}
-
-/*===== LAYOUT =====*/
-.bd-container {
-  max-width: 1024px;
-  width: calc(100% - 2rem);
-  margin-left: var(--mb-2);
-  margin-right: var(--mb-2);
-}
-
-.bd-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.l-header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: var(--z-fixed);
-  background-color: #000;
-}
-
-/*===== ABOUT =====*/
-.about__data {
-  text-align: center;
-}
-
-.about__description span {
-  font-size: var(--h2-font-size);
-  font-weight: var(--font-semi-bold);
-  color: var(--first-color);
-}
-
-.about__number {
-  font-size: var(--h1-font-size);
-  color: var(--first-color);
-  display: block;
-}
-
-.about__img {
-  justify-self: center;
-  width: 220px;
-  border-radius: .5rem;
-  box-shadow: -6px 14px 13px 0px rgba(0,0,0,0.2);
-}
-
-/*===== MEDIA QUERIES =====*/
-@media screen and (min-width: 576px) {
+  
+  .navbar-toggler:hover .navbar-toggler-icon {
+      filter: brightness(1.2); /* Adjust brightness on hover */
+  }
+  
+  /* About section */
+  .about {
+      padding: 4rem 0;
+  }
+  
   .about__container {
-    grid-template-columns: repeat(2, 1fr);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
   }
-
-}
-
-@media screen and (min-width: 768px) {
-  body {
-    margin: 0;
+  
+  .about__data {
+      text-align: center;
   }
-
-  section {
-    padding-top: 6rem;
+  
+  .about__description span {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--first-color);
   }
-
-  .section-title {
-    margin-bottom: var(--mb-5);
+  
+  .about__number {
+      font-size: 3rem;
+      color: var(--first-color);
+      display: block;
   }
-
-  .about__description {
-    text-align: initial;
-  }
-
+  
   .about__img {
-    width: 400px;
-    height: 400px;
+      justify-self: center;
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      box-shadow: -6px 14px 13px 0px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .bd-container {
-    margin-left: auto;
-    margin-right: auto;
+  
+  .about__img:hover {
+      transform: scale(1.05); /* Scale up image on hover */
   }
-
-  .home__img img {
-    width: 740px;
+  
+  /* Footer */
+  .footer {
+      background-color: var(--first-color-dark);
+      color: var(--first-color-light);
+      padding: 1rem 0;
+      text-align: center;
   }
-}
-</style>
-<!-- <body background="../website/image/3.jpg">   -->
-    <body>
-        
-    
-      
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  
+  .footer p {
+      margin: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (min-width: 768px) {
+      .about__container {
+          grid-template-columns: repeat(2, 1fr);
+      }
+  }
+  
+  </style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <img src="../website/image/logo.png" alt="" height="50" width="50">
-            <!-- <a class="navbar-brand" href="#">Brand Buzz Creative Studio
-            </a> -->
+            <a class="navbar-brand" href="#">
+                <img src="../website/image/logo.png" alt="" height="50" width="50">
+                Brand Buzz Creative Studio
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
@@ -254,45 +109,130 @@ img{
             </div>
         </div>
     </nav>
-    <!-- <img src="../website/image/7.jpg" class="card-img" alt="..." height="250" width="350"> -->
-<!--===== ABOUT =====-->
-<section class="about section bd-container" id="about">
-  <!-- <span class="section-subtitle">My history</span> -->
-  <h2 class="section-title">About me</h2>
 
-  <div class="about__container bd-grid">
-    <div class="about__data bd-grid">
-      <p class="about__description"><span>Hello, I am <br></span>Freelance frontend developer, I am passionate about creating and developing web interfaces. With years of experience in web design and development.</p>
+    <section class="about section bd-container" id="about">
+        <h2 class="section-title">About me</h2>
+        <div class="about__container bd-grid">
+            <div class="about__data bd-grid">
+                <p class="about__description"><span>Hello, I am <br></span>Freelance frontend developer, I am passionate about creating and developing web interfaces. With years of experience in web design and development.</p>
 
-      <div>
-        <span class="about__number">05</span>
-        <span class="about__achievement">Years off Experience</span>
-      </div>
+                <div>
+                    <span class="about__number">05</span>
+                    <span class="about__achievement">Years off Experience</span>
+                </div>
 
-      <div>
-        <span class="about__number">29+</span>
-        <span class="about__achievement">Projects completes</span>
-      </div>
+                <div>
+                    <span class="about__number">29+</span>
+                    <span class="about__achievement">Projects completed</span>
+                </div>
 
-      <div>
-        <span class="about__number">07</span>
-        <span class="about__achievement">Best work awards</span>
-      </div>
-    </div>
+                <div>
+                    <span class="about__number">07</span>
+                    <span class="about__achievement">Best work awards</span>
+                </div>
+            </div>
 
-    <img src="image/8.jpg" alt="" class="about__img" height="500" width="500">
-  </div>
-</section>
+            <img src="../website/image/8.jpg" alt="" class="about__img" height="500" width="500">
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
-          <p class="ft">&copy; 2024 Dummy Website. All Rights Reserved.</p>
+            <p class="ft">&copy; 2024 Dummy Website. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" 
-    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" 
-    crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-LYod1+QNqtv1e3Z7nAD5fwy7sJ/JGr6UzANkG7O8GDW7HLI6pbzo9tu8+9zHo/1a" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-lwK+C0ftm9zQ6YXB6+VRjUHbVg7F74pOSWIf0n0bc0Bf7O4YbhJLrXpnG7Oe65Bx" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<!-- navbar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+  .navbar-nav .nav-link {
+    color: #fff; /* Default link color */
+    transition: color 0.3s; /* Smooth transition effect for color change */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f1e4e4; /* Change color on hover */
+}
+
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../website/image/logo.png" alt="" height="50" width="50">
+                Brand Buzz Creative Studio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about section bd-container" id="about">
+        <h2 class="section-title">About me</h2>
+        <div class="about__container bd-grid">
+            <div class="about__data bd-grid">
+                <p class="about__description"><span>Hello, I am <br></span>Freelance frontend developer, I am passionate about creating and developing web interfaces. With years of experience in web design and development.</p>
+
+                <div>
+                    <span class="about__number">05</span>
+                    <span class="about__achievement">Years off Experience</span>
+                </div>
+
+                <div>
+                    <span class="about__number">29+</span>
+                    <span class="about__achievement">Projects completed</span>
+                </div>
+
+                <div>
+                    <span class="about__number">07</span>
+                    <span class="about__achievement">Best work awards</span>
+                </div>
+            </div>
+
+            <img src="../website/image/8.jpg" alt="" class="about__img" height="500" width="500">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="ft">&copy; 2024 Dummy Website. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-LYod1+QNqtv1e3Z7nAD5fwy7sJ/JGr6UzANkG7O8GDW7HLI6pbzo9tu8+9zHo/1a" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-lwK+C0ftm9zQ6YXB6+VRjUHbVg7F74pOSWIf0n0bc0Bf7O4YbhJLrXpnG7Oe65Bx" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
